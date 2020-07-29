@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+
+char_name = input("Which character do you want to know about? (Flash, Batman, Superman)? ")
+
+char_stat = input("What statistic do you want to know about? (strength, speed, or intelligence)? ")
+
+char_list = {"flash": {"speed": "fastest", "intelligence": "lowest", "strength": "lowest"},
+             "batman": {"speed": "slowest", "intelligence": "Highest", "strength": "Money"},
+             "superman": {"speed": "fast", "intelligence": "average", "strength": "strongest"}}
+
+
+while char_name != ['flash', 'superman', 'batman']:
+
+    if char_name.lower() == 'flash' and char_stat.lower() == 'strength':
+        print(f"{char_name.capitalize()}'s {char_stat} is : {char_list['flash']['strength']}")
+
+        break
+
+    elif char_name.lower() == 'flash' and char_stat.lower() == 'speed':
+        print(f"{char_name.capitalize()}'s {char_stat} is : {char_list['flash']['speed']}")
+
+        break
+
+    elif char_name.lower() == 'flash' and char_stat.lower() == 'intelligence':
+        print(f"{char_name.capitalize()}'s {char_stat} is : {char_list['flash']['intelligence']}")
+
+        break
+
+    elif char_name.lower() == 'batman' and char_stat.lower() == 'speed':
+        print(f"{char_name.capitalize()}'s {char_stat} is : {char_list['batman']['speed']}")
+
+        break
+
+    elif char_name.lower() == 'batman' and char_stat.lower() == 'intelligence':
+        print(f"{char_name.capitalize()}'s {char_stat} is : {char_list['batman']['intelligence']}")
+
+        break
+
+    elif char_name.lower() == 'batman' and char_stat.lower() == 'strength':
+        print(f"{char_name.capitalize()}'s {char_stat} is : {char_list['batman']['strength']}")
+
+        break
+
+    elif char_name.lower() == 'superman' and char_stat.lower() == 'speed':
+        print(f"{char_name.capitalize()}'s {char_stat} is :{char_list['superman']['speed']}")
+
+        break
+
+    elif char_name.lower() == 'superman' and char_stat.lower() == 'intelligence':
+        print(f"{char_name.capitalize()}'s {char_stat} is : {char_list['superman']['intelligence']}")
+
+        break
+
+    elif char_name.lower() == 'superman' and char_stat.lower() == 'strength':
+        print(f"{char_name.capitalize()}'s {char_stat} is : {char_list['superman']['strength']}")
+
+        break
+
+    else:
+        print(("Didn't enter valid text"))
+
+        char_name = input("Which character do you want to know about? (Flash, Batman, Superman)? ")
+
+        char_stat = input("What statistic do you want to know about? (strength, speed, or intelligence)? ")
