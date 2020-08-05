@@ -1,1 +1,41 @@
+import requests
+
+print()
+print('WELCOME TO PANTRY HELPER\n')
+print('Directions:\n'
+      '1) List the ingredients you have in your pantry\n'
+      '2) Enter the number of recipes you want to receive back *Note: Quantity of recipes is dependent on ingredients specified\n'
+      '3) Choose the desired recipe from output\n'
+      '4) Pantry helper will generate a file with your recipe and needed ingredients\n')
+print(input('Once you understood the directions press ENTER to continue'))
+
+
+def recipe_finder():
+    print('RECIPE FINDER\n')
+    print('Alright, now for the recipes! Enter the ingredients you have here separated by commas: \n')
+    ingredients = input('List all the ingredients that you have: ')
+
+    print('\nCool! Now enter in the number of recipes you want to receive back.\n')
+    number = int(input('How many recipes do you want back?: '))
+    api_key = 'bebd83d22bd642b6b2c4a2cb8f1dc1d8'
+    r = requests.get(f"https://api.spoonacular.com/recipes/findByIngredients?apiKey={api_key}&ingredients={ingredients}&number={number}")
+    print()
+    print('Here are the recipes you can make:\n')
+    for yum in r.json():
+        print(yum['title'])
+    print()
+
+
+def list_ingredients(chosen_recipe):
+    print(f"Here are the ingredients you need for {chosen_recipe.lower()}: ")
+    api_key = 'bebd83d22bd642b6b2c4a2cb8f1dc1d8'
+    r = requests.get(f"https://api.spoonacular.com/recipes/complexSearch?apiKey={api_key}&query={chosen_recipe.lower()}&addRecipeInformation=true")
+    print(r.json().get('analyzedInstructions'))
+
+
+recipe_finder()
+
+chosen_recipe = input("Found a recipe you like? Great, now enter it here so I can give you the ingredients: ")
+
+list_ingredients(chosen_recipe)
 
