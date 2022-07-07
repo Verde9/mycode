@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yo mama jokes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha256-/ykJw/wDxMa0AQhHDYfuMEwVb4JHMx9h4jD4XvHqVzU=" crossorigin="anonymous" />
+<style>
+    body {
+        text-align: center;
+    }
+
+    div {
+       margin-top: 45vh 
+    }
+
+</style>
+</head>
+<body>
+    <div>
+    <h1>Wanna hear a yo mama joke or a dad joke?</h1>
+    <a href="{{ url_for('yomama') }}" class='btn btn-primary'>Joke on my mama man!</a>
+    <a href="{{ url_for('yodaddy') }}" class='btn btn-primary'>Dad jokes are awesome dude!</a>
+    </div>
+</body>
+</html>
